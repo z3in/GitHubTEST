@@ -1,0 +1,106 @@
+.bodyContainer {
+  position: absolute;
+  left: 0;
+  top: 5vh;
+  width: 100%;
+  display: flex;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.mainContainer {
+  left: 25vh;
+  width: calc(100% - 50px);
+  height: 100%;
+}
+
+.itemList {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 2vh;
+}
+
+.itemListContainer {
+  padding: 1vh;
+  margin: 1vh;
+  background-color: #626275;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 20vh;
+  border-radius: 2vh;
+  box-shadow: 0.25vh 0.25vh 1vh #222235, -0.25vh -0.25vh 1vh #a2a2be;
+}
+
+.itemListContainer:hover {
+  background-color: #828295;
+}
+.itemContent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.itemImage {
+  width: 19vh;
+  margin-top: 0.5vh;
+  border-radius: 1vh;
+  box-shadow: -0.25vh -0.25vh 0.5vh #a2a2be, 0.25vh 0.25vh 1vh #222235;
+  z-index: 3;
+}
+
+.itemButton {
+  bottom: 0;
+  width: 20vh;
+  height: 5vh;
+  border: none;
+  border-radius: 1vh;
+  background-color: #828295;
+  color: #222235;
+  cursor: pointer;
+  margin-top: 1vh;
+  outline: none;
+  font-size: 1.5vh;
+  font-family: "Russo One", sans-serif;
+  box-shadow: 0.25vh 0.25vh 1vh #222235, -0.25vh -0.25vh 0.5vh #a2a2be;
+}
+.itemButton:hover {
+  background-color: #424255;
+  color: #828295;
+  box-shadow: -0.25vh -0.25vh 0.5vh #a2a2be inset,
+    0.25vh 0.25vh 1vh #222235 inset;
+}
+
+.itemPrize {
+  font-size: 25px;
+  color: #222235;
+  align-content: center;
+  margin: -2vh 0 1vh 0;
+  user-select: none;
+  text-shadow: 1px 1px #a2a2be;
+}
+.itemName,
+.classQuantity {
+  font-size: 1.2vh;
+  color: #ccccdd;
+}
+
+.quantityBox {
+  width: 5vh;
+  height: 3vh;
+  text-align: center;
+  font-size: 2vh;
+  margin: 1vh;
+  outline: none;
+  background-color: #424255;
+  border: none;
+  color: #ccccdd;
+  border-radius: 0.25vh;
+  box-shadow: 0.25vh 0.25vh 1vh #121225 inset,
+    -0.25vh -0.25vh 0.5vh #828295 inset;
+}
+/* .itemVisible {
+  display: none;
+} */

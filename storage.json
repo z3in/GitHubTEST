@@ -1,0 +1,76 @@
+{
+  "product": [
+    {
+      "name": "Pizza",
+      "price": 900,
+      "id": "01",
+      "quantity": 5
+    },
+    {
+      "name": "Spagetti",
+      "price": 400,
+      "id": "02",
+      "quantity": 5
+    },
+    {
+      "name": "carbonara",
+      "price": 200,
+      "id": "03",
+      "quantity": 5
+    },
+    {
+      "name": "Pansit",
+      "price": 300,
+      "id": "04",
+      "quantity": 5
+    },
+    {
+      "name": "Burger",
+      "price": 1000,
+      "id": "05",
+      "quantity": 5
+    },
+    {
+      "name": "beef with mushroom",
+      "price": 1100,
+      "id": "06",
+      "quantity": 5
+    },
+    {
+      "name": "tapsilog",
+      "price": 75,
+      "id": "07",
+      "quantity": 5
+    },
+    {
+      "name": "extra rice",
+      "price": 15,
+      "id": "08",
+      "quantity": 5
+    },
+    {
+      "name": "hamsilog",
+      "price": 150,
+      "id": "09",
+      "quantity": 5
+    },
+    {
+      "name": "hotsilog",
+      "price": 65,
+      "id": "10",
+      "quantity": 5
+    },
+    {
+      "name": "ice tea",
+      "price": 120,
+      "id": "11",
+      "quantity": 5
+    },
+    {
+      "name": "juice",
+      "price": 450,
+      "id": "12",
+      "quantity": 5
+    }
+  ]
+}
