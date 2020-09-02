@@ -31,36 +31,53 @@ function getID(e) {
     .innerText;
   const price = document.getElementById(`itemPrize${e.target.id.slice(-2)}`)
     .innerText;
-  var node = document.createElement("div");
-  node.setAttribute("class", "orderList");
-  node.setAttribute("id", `orderlist${e.target.id.slice(-2)}`);
-  node.setAttribute("onmouseover", "showDelete(event)");
-  node.setAttribute("onmouseout", "hideDelete(event)");
-  // var textnode = document.createTextNode(`${itemname} : ${price}`);
-  // node.appendChild(textnode);
+  const verifyElement = document.getElementById(
+    `orderlist${e.target.id.slice(-2)}`
+  );
+  if (!verifyElement) {
+    var node = document.createElement("div");
+    node.setAttribute("class", "orderList");
+    node.setAttribute("id", `orderlist${e.target.id.slice(-2)}`);
+    node.setAttribute("onmouseover", "showDelete(event)");
+    node.setAttribute("onmouseout", "hideDelete(event)");
+    // var textnode = document.createTextNode(`${itemname} : ${price}`);
+    // node.appendChild(textnode);
 
-  var itemNode = document.createElement("div");
-  itemNode.setAttribute("class", "itemNode");
-  node.appendChild(itemNode);
-  var textnode = document.createTextNode(`${itemname} . . .x1`);
-  itemNode.appendChild(textnode);
+    var itemNode = document.createElement("div");
+    itemNode.setAttribute("class", "itemNode");
+    node.appendChild(itemNode);
+    var textnode = document.createTextNode(`${itemname} . . .x1`);
+    itemNode.appendChild(textnode);
 
-  var priceNode = document.createElement("div");
-  priceNode.setAttribute("class", "priceNode");
-  node.appendChild(priceNode);
-  var numNode = document.createTextNode(`P ${price}`);
-  priceNode.appendChild(numNode);
+    var priceNode = document.createElement("div");
+    priceNode.setAttribute("class", "priceNode");
+    node.appendChild(priceNode);
+    var numNode = document.createTextNode(`P ${price}`);
+    priceNode.appendChild(numNode);
 
-  document.getElementById("orderItems").appendChild(node);
-  var deleteItem = document.createElement("div");
-  deleteItem.setAttribute("class", "deleteItem");
-  deleteItem.setAttribute("id", `deleteItem${e.target.id.slice(-2)}`);
-  deleteItem.setAttribute("onclick", "deleteMe(event)");
-  deleteItem.setAttribute("onmouseover", "showDelete(event)");
-  deleteItem.setAttribute("onmouseout", "hideDelete(event)");
-  var deleteMSG = document.createTextNode("Delete");
-  deleteItem.appendChild(deleteMSG);
-  document.getElementById("orderItems").appendChild(deleteItem);
+    document.getElementById("orderItems").appendChild(node);
+    var deleteItem = document.createElement("div");
+    deleteItem.setAttribute("class", "deleteItem");
+    deleteItem.setAttribute("id", `deleteItem${e.target.id.slice(-2)}`);
+    deleteItem.setAttribute("onclick", "deleteMe(event)");
+    deleteItem.setAttribute("onmouseover", "showDelete(event)");
+    deleteItem.setAttribute("onmouseout", "hideDelete(event)");
+    var deleteMSG = document.createTextNode("Delete");
+    deleteItem.appendChild(deleteMSG);
+    document.getElementById("orderItems").appendChild(deleteItem);
+  } else {
+    var item = verifyElement.getElementsByClassName("itemNode")[0].innerHTML;
+    var count = item.slice(item.indexOf("x") + 1);
+    datacount = parseInt(count);
+    datacount++;
+    verifyElement.getElementsByClassName(
+      "itemNode"
+    )[0].innerHTML = `${itemname} . . . x${datacount}`;
+    total = price * datacount;
+    verifyElement.getElementsByClassName(
+      "priceNode"
+    )[0].innerHTML = `P ${total}`;
+  }
 }
 function deleteMe(e) {
   var myobj = document.getElementById(`orderlist${e.target.id.slice(-2)}`);
